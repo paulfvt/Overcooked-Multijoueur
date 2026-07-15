@@ -6,4 +6,4 @@ b b b b b b b g g g b b b b b b i
 b b b b b b b g g g b b b b b b g
 b b b b b b b d g d b b b b b b b
 b b b b b b b b b b b b b b b b b
-b g h g b b b b b b b g d d g b b
+b g h g o o o b b b b g d d g b b
