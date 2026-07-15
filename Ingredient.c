@@ -6,7 +6,6 @@
 #include "map.h"
 #include <stdlib.h>
 #include "Joueur.h"
-#include "Ingredient.h"
 
 #include <stdbool.h>
 
@@ -70,28 +69,28 @@ void recette(int* recette,Assiette* assiette){
 void addCommande(File *fileCommande) {
 
     // Allocation de mémoire pour la nouvelle commande
-    Commande *newCommande = (Commande *)malloc(sizeof(Commande));
+    Commande* newCommande = (Commande* ) malloc(sizeof(Commande));
 
     // Choix aléatoire du type de tacos
     int choix = (rand() % 4) + 1;
     switch (choix) {
         case 1:
-            newCommande->tacos.type = EL_NORMAL;
+            newCommande->type = EL_NORMAL;
             newCommande->imageCommande = al_load_bitmap("../assets/Image/commande1.png");
             break;
 
         case 2:
-            newCommande->tacos.type = EL_CLASICO;
+            newCommande->type = EL_CLASICO;
             newCommande->imageCommande = al_load_bitmap("../assets/Image/commande2.png");
             break;
 
         case 3:
-            newCommande->tacos.type = EL_VEGANO;
+            newCommande->type = EL_VEGANO;
             newCommande->imageCommande = al_load_bitmap("../assets/Image/commande3.png");
             break;
 
         case 4:
-            newCommande->tacos.type = LA_TOTALIDAD;
+            newCommande->type = LA_TOTALIDAD;
             newCommande->imageCommande = al_load_bitmap("../assets/Image/commande4.png");
             break;
     }
@@ -139,17 +138,17 @@ void initialiserCommande(File *fileCommande) {
 }
 
 
-void afficherCommande(File *fileClients, ALLEGRO_FONT *font) {
+void afficherCommande(File *fileCommande, ALLEGRO_FONT *font) {
 
     //affiche la file
     float y = 50;
     float x = 100;
-    Commande *temp = fileClients->first;
+    Commande* temp = fileCommande->first;
 
-    for (int n = 0; n < 3 && temp != NULL; ++n) {
-        al_draw_bitmap(temp->imageCommande, x - 50, y - 45, 0);
+    for (int n = 0; n < 3 && temp != NULL; n++) {
+        al_draw_bitmap(temp->imageCommande, x - 50 + n * 280, y - 45, 0);
         al_draw_textf(font, al_map_rgb(0, 0, 0), x + 65, y + 58, ALLEGRO_ALIGN_CENTER, "%d s", temp->temps);
         temp = temp->next;
-        x = x + 280;
     }
+   // printf("ok\n");
 }
