@@ -15,7 +15,7 @@
 int main(){
 
     // Declarations
-    ALLEGRO_DISPLAY *display = NULL;
+    ALLEGRO_DISPLAY* display = NULL;
     ALLEGRO_EVENT_QUEUE *fifo = NULL;
     ALLEGRO_TIMER *timer = NULL;
     ALLEGRO_EVENT event = {0};
@@ -59,7 +59,7 @@ int main(){
     al_register_event_source(fifo, al_get_mouse_event_source());
 
 
-   chargement(); //ecran de chargement principal
+    chargement(); //ecran de chargement principal
 
 
     int niveauCourant = 1;
