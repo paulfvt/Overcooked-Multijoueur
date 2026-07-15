@@ -66,7 +66,7 @@ void dessinerTout(joueur* joueur1, joueur* joueur2,cafard* cafard, ALLEGRO_BITMA
     al_draw_textf(font, al_map_rgb(255, 255, 255), 850, 675, 0, "Case(j2) : (%d, %d)", (joueur2->cx - 114) / 60, (joueur2->cy - 81) / 60);
     al_draw_textf(font, al_map_rgb(255, 255, 255), 1100,  675, 0, "Score : (%d)", score);
 
-    //afficherCommande(fileClients,font);
+    afficherCommande(fileClients,font);
 
     al_flip_display();
 }
@@ -739,19 +739,11 @@ void gameplay(joueur* joueur1, joueur* joueur2 , cafard* cafard, balle* balle1, 
 
     // Initialisation de fileClients
     File *fileClients = (File *)malloc(sizeof(File));
-    if (fileClients == NULL) {
-        fprintf(stderr, "Erreur d'allocation de mémoire pour fileClients.\n");
-        exit(EXIT_FAILURE);
-    }
     fileClients->first = NULL;
     fileClients->last = NULL;
 
     // Initialisation de fileCommande
     File *fileCommande = (File *)malloc(sizeof(File));
-    if (fileCommande == NULL) {
-        fprintf(stderr, "Erreur d'allocation de mémoire pour fileCommande.\n");
-        exit(EXIT_FAILURE);
-    }
     fileCommande->first = NULL;
     fileCommande->last = NULL;
 
@@ -815,7 +807,7 @@ void gameplay(joueur* joueur1, joueur* joueur2 , cafard* cafard, balle* balle1, 
         lectureCuisineFichierText(cuisine, "../Niveau3.txt");
     }
 
-    int score = 100;
+    int score = 0;
 
 
 //    genererCommandeTacos();
@@ -901,7 +893,7 @@ void gameplay(joueur* joueur1, joueur* joueur2 , cafard* cafard, balle* balle1, 
                 decouperFromage(joueur1, joueur2, imagesIngredients, flags, cuisine);
                 cuireViande(joueur1, joueur2, imagesIngredients, flags, cuisine);
                 //dessinerConstructionDeLaTortilla(assiette,&recette);
-                //addCommande(fileCommande);
+                addCommande(fileCommande);
 
 
                     dessinerTout(joueur1, joueur2, cafard, gif_frames_cafard, &frame_actuelle_cafard, balle1, balle2,cuisine,images,imagesIngredients,flags,font,temps,fileClients, score);
