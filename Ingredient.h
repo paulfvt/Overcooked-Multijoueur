@@ -28,7 +28,6 @@ typedef struct Assiette{
     bool tomatedecoupe;
     bool viandecuite;
     bool salade;
-    int type;
 }Assiette;
 
 typedef enum {
@@ -40,13 +39,19 @@ typedef enum {
 
 typedef struct commande{
     // data
-    Assiette tacos;
+    int type;
     unsigned int temps;
     ALLEGRO_BITMAP* imageCommande;
+    bool assiette;
+    bool pain;
+    bool poivronsdecoupe;
+    bool tomatedecoupe;
+    bool viandecuite;
+    bool salade;
     // lien
     struct commande* prev;
     struct commande * next;
-    int nbIngredients;
+
 }Commande;
 
 typedef struct FileCommande{
