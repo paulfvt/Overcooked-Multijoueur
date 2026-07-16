@@ -72,8 +72,9 @@ typedef struct commande {
     struct commande* prev;     // Pointeur vers l'élément précédent
 } Commande;
 
+```
 ---
-
+```text
 ECEcooked/
 ├── src/                          # Code source (.c) et fichiers d'en-tête (.h)
 │   ├── main.c                    # Point d'entrée, initialisation d'Allegro 5 et boucle principale
