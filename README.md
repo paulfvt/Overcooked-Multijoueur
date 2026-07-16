@@ -37,9 +37,11 @@ Le défilement des commandes à l'écran repose sur une structure de **file doub
 
 ```text
 [First Commande] <---> [Commande] <---> [Last Commande] ---> NULL
+````
 
 ---
 
+````text
 // Structure gérant l'état physique, la visée et l'inventaire d'un cuisinier
 typedef struct {
     float x, y;                // Position courante
