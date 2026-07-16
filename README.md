@@ -75,8 +75,8 @@ typedef struct commande {
 ```
 ---
 ```text
-ECEcooked/
-├── src/                          # Code source (.c) et fichiers d'en-tête (.h)
+📁 ECEcooked/
+├── 📁 src/                          # Code source (.c) et fichiers d'en-tête (.h)
 │   ├── main.c                    # Point d'entrée, initialisation d'Allegro 5 et boucle principale
 │   ├── Gameplay.c / .h           # Boucle de jeu, logique des ticks physiques et des interactions
 │   ├── Joueur.c / .h             # Déplacements, tirs et physique des personnages
@@ -85,7 +85,7 @@ ECEcooked/
 |   ├── Niveau1 / 2 / 3.txt       # Agencement matriciel de la cuisine
 │   └── Menu.c / .h               # Interface du menu principal, scoreboard et écrans de chargement
 │
-├── assets/                       # Ressources multimédias
+├── 📁 assets/                       # Ressources multimédias
 │   ├── Image/                    # Sprites des personnages, GIF cafard, ingrédients, décors, et HUD
 │   └── musique/                  # Musique de fond (La Cucaracha) et effets sonores (.wav)
 │
