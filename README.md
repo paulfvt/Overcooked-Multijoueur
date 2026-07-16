@@ -74,8 +74,10 @@ typedef struct commande {
     struct commande* prev;     // Pointeur vers l'élément précédent
 } Commande;
 
-```
+````
+
 ---
+
 ```text
 📁 ECEcooked/
 ├── 📁 src/                       # Code source (.c) et fichiers d'en-tête (.h)
